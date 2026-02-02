@@ -1,0 +1,30 @@
+body  { margin: 0; 
+        padding: 0; 
+        min-height: 100vh;  
+         background: linear-gradient(135deg, #176ae7, #adc74e); 
+         background-image:     
+            radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
+            radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
+        background-blend-mode: overlay; 
+        font-family: sans-serif; }
+
+div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+button { border-radius: 10px; 
+        background-color: purple; 
+        color: white; 
+        padding: 10px 20px; 
+         border: none; 
+         cursor: pointer;  }
+button:hover {
+        transform: scale(1.05);
+
+}
+
+a {color: black}
+
+a:hover {color: blue}
