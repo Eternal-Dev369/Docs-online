@@ -70,15 +70,6 @@ body  {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#btn_create {
-        border-radius: 10px; 
-        background-color: purple; 
-        color: white; 
-        padding: 10px 20px; 
-        border: none; 
-        cursor: pointer;
-}
-
 dialog {
         border: none; 
         padding: 20px; 
@@ -97,7 +88,22 @@ dialog input {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-dialog button {
-    width: 20%;
-    margin: 0 auto;
+#btn_back {
+        border-radius: 10px; 
+        background-color: lightgrey; 
+        color: white; 
+        padding: 10px 20px; 
+        border: none; 
+        cursor: pointer;
+        width: 20%
+}
+
+#btn_create {
+        border-radius: 10px; 
+        background-color: purple; 
+        color: white; 
+        padding: 10px 20px; 
+        border: none; 
+        cursor: pointer;
+        width: 20%
 }
