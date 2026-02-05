@@ -1,9 +1,11 @@
 body  {
         margin: 0; 
-         background-color: #FFF; 
-         background-image:     
-            radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
-            radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
+        background-color: #FFF;
+        /*
+        background-image:
+                radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
+                radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
+        */
         background-blend-mode: overlay; 
         font-family: sans-serif;
 }
@@ -31,6 +33,23 @@ body  {
         background: lavender;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         padding: 10px;
+}
+
+.document {
+        color: #000000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 10px;
+        border: 1px solid #ebebeb;
+        border-radius: 12px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 17px;
+        background-color: #f1f1f1;
+}
+ .document:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 #btn_new {
@@ -71,29 +90,14 @@ dialog {
 }
 
 dialog input {
-    width: 50%;
-    margin: 0 auto;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        padding: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 dialog button {
     width: 20%;
     margin: 0 auto;
 }
-
-.document {
-        color: #000000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        padding: 10px;
-        border: 1px solid #ebebeb;
-        border-radius: 12px;
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 17px;
-        background-color: #f1f1f1;
-}
- .document:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
