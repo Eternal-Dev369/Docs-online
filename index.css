@@ -70,18 +70,18 @@ a:hover {
 }
 
 .paragraphe-presentation {
-        margin-top: 50px;
         display: flex;
+        gap: 5%
         width: 90%;
+        margin-top: 50px;
         margin-left: auto;
         margin-right: auto;
 }
 
 .paragraphe-presentation img {
-        width: 40%;
+        width: 45%;
         float: left;
         border-radius: 50px;
-        margin-right: 5%;
 }
 
 .paragraphe-presentation .text-presentation {
@@ -130,6 +130,7 @@ a:hover {
         font-size: 30px;
 
 }
+
 
 
 
