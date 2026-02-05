@@ -22,6 +22,17 @@ body  {
         */
 }
 
+#documents {
+        border-radius: 20px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        background: lavender;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+}
+
 #btn_new {
         background-color: purple; 
         color: white; 
@@ -71,22 +82,18 @@ dialog button {
 
 .document {
         color: #000000;
-        /*
-        border: 1px #cacaca solid;
-        background-color: white;
-        */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         padding: 10px;
-
         border: 1px solid #ebebeb;
         border-radius: 12px;
         width: 70%;
-        margin: auto;
-        margin-top: 12px;
-        margin-bottom: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 17px;
         background-color: #f1f1f1;
 }
  .document:hover {
         transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+
