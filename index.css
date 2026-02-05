@@ -68,7 +68,8 @@ a:hover {color: blue;}
         margin-top: 200px;
         display: flex;
         width: 90%;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
 }
 
 .paragraphe-presentation img {
@@ -80,9 +81,7 @@ a:hover {color: blue;}
 
 .paragraphe-presentation .text-presentation {
         font-size: 20px;
-        float: right;
-        margin-left: 5%;
-        
+        float: right;        
 }
         
 
@@ -126,6 +125,7 @@ a:hover {color: blue;}
         font-size: 30px;
 
 }
+
 
 
 
