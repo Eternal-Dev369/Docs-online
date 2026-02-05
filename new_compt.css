@@ -1,30 +1,57 @@
-body  { margin: 0; 
-        padding: 0; 
-        min-height: 100vh;  
-         background: linear-gradient(135deg, #176ae7, #adc74e); 
-         background-image:     
-            radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
-            radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
-        background-blend-mode: overlay; 
-        font-family: sans-serif; }
+body  {
+	margin: 0; 
+	padding: 0; 
+	min-height: 100vh;  
+	 background: linear-gradient(135deg, #176ae7, #adc74e); 
+	 background-image:     
+		radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
+		radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
+	background-blend-mode: overlay; 
+	font-family: sans-serif;
+}
 
 div {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	text-align: center;
+	background-color: white;
+	min-width: min-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 200px;
+	border-radius: 20px;
+	padding: 15px;
+	width: 30%;
 }
-button { border-radius: 10px; 
-        background-color: purple; 
-        color: white; 
-        padding: 10px 20px; 
-         border: none; 
-         cursor: pointer;  }
+
+input {
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        padding: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button {
+        border-radius: 10px;
+        background-color: purple;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
 button:hover {
         transform: scale(1.05);
 
 }
 
-a {color: black}
-
-a:hover {color: blue}
+a {
+        color: black;
+}
+a:hover {
+        color: blue;
+}
