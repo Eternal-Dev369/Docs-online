@@ -6,14 +6,6 @@ body  {
         height: 180vh;
 }
 
-input {
-        border-radius: 5px;
-        border: none;
-        margin-bottom: 10px;
-        padding: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
 .titre {
         font-size: 40px;
         font-weight: bold;
@@ -40,6 +32,14 @@ input {
         border-radius: 20px;
         padding: 15px;
         width: 30%;
+}
+
+input {
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        padding: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -85,5 +85,3 @@ a:hover {
         float: right;
         text-align: justify;
 }
-
-
