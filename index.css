@@ -73,10 +73,14 @@ a:hover {color: blue;}
         width: 40%;
         float: left;
         border-radius: 50px;
+        margin-left: 10%;
+        margin-right: 10%;
 }
 
-.paragraphe-presentation p {
+.paragraphe-presentation .text-presentation {
         font-size: 25px;
+        float: right;
+        
 }
         
 
@@ -120,6 +124,7 @@ a:hover {color: blue;}
         font-size: 30px;
 
 }
+
 
 
 
