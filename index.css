@@ -9,7 +9,6 @@ body  {
         background-blend-mode: overlay; 
         font-family: sans-serif;
         height: 190vh;
-
 }
 
 input {
@@ -37,13 +36,15 @@ input {
 }
 
 .container {
-    text-align: center;
-    background-color: white;
-    min-width: min-content;
-    margin: auto;
-    border-radius: 20px;
-    padding: 15px;
-    width: 30%;
+        text-align: center;
+        background-color: white;
+        min-width: min-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 200px;
+        border-radius: 20px;
+        padding: 15px;
+        width: 30%;
 }
 
 button {
@@ -61,11 +62,15 @@ button:hover {
 
 }
 
-a {color: black}
-a:hover {color: blue;}
+a {
+        color: black;
+}
+a:hover {
+        color: blue;
+}
 
 .paragraphe-presentation {
-        margin-top: 200px;
+        margin-top: 50px;
         display: flex;
         width: 90%;
         margin-left: auto;
@@ -125,6 +130,7 @@ a:hover {color: blue;}
         font-size: 30px;
 
 }
+
 
 
 
