@@ -12,16 +12,20 @@ body  {
 
 #Bandaux {
         position: sticky;
-        border: none;
+        top: 0;
         background-color: purple;
         color: white;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
         height: 100px;
         width: 100%;
-        /*
-        border-radius: 10px;
-        */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+#Bandaux h1 {
+        margin: 0;
 }
 
 #documents {
@@ -107,3 +111,4 @@ dialog input {
         cursor: pointer;
         width: 20%
 }
+
