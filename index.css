@@ -71,7 +71,7 @@ a:hover {
 
 .paragraphe-presentation {
         display: flex;
-        gap: 5%
+        gap: 5%;
         width: 90%;
         margin-top: 50px;
         margin-left: auto;
@@ -130,6 +130,7 @@ a:hover {
         font-size: 30px;
 
 }
+
 
 
 
