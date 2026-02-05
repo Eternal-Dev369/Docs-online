@@ -1,13 +1,44 @@
-body  { margin: 0; 
-        padding: 0; 
-        min-height: 100vh;  
+body  {
+        margin: 0; 
          background-color: #FFF; 
          background-image:     
             radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
             radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
         background-blend-mode: overlay; 
-        font-family: sans-serif; }
+        font-family: sans-serif;
+}
 
+#Bandaux {
+        position: sticky;
+        border: none;
+        background-color: purple;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        height: 100px;
+        width: 100%;
+        /*
+        border-radius: 10px;
+        */
+}
+
+#btn_new {
+        background-color: purple; 
+        color: white; 
+        border: none; 
+        cursor: pointer;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        border-radius: 100%;
+        width: 75px;
+        height: 75px;
+        font-size: 50px;
+}
+#btn_new:hover {
+        transform:scale(1.2) ;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
 #btn_create {
         border-radius: 10px; 
@@ -58,37 +89,4 @@ dialog button {
  .document:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-#Bandaux {
-        position: sticky;
-        border: none;
-        background-color: purple;
-        color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        height: 100px;
-        width: 100%;
-        /*
-        border-radius: 10px;
-        */
-}
-
-#btn_new {
-        background-color: purple; 
-        color: white; 
-        border: none; 
-        cursor: pointer;
-        position: fixed;
-        bottom: 5%;
-        right: 5%;
-        border-radius: 100%;
-        width: 75px;
-        height: 75px;
-        font-size: 50px;
-}
-#btn_new:hover {
-        transform:scale(1.2) ;
-        border: 5px #000000 solid;
-        
 }
