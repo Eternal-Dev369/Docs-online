@@ -65,21 +65,23 @@ a {color: black}
 a:hover {color: blue;}
 
 .paragraphe-presentation {
-        margin-top: 50px;
-        display: flex
+        margin-top: 200px;
+        display: flex;
+        width: 90%;
+        margin: auto;
 }
 
 .paragraphe-presentation img {
         width: 40%;
         float: left;
         border-radius: 50px;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-right: 5%;
 }
 
 .paragraphe-presentation .text-presentation {
-        font-size: 25px;
+        font-size: 20px;
         float: right;
+        margin-left: 5%;
         
 }
         
@@ -124,6 +126,7 @@ a:hover {color: blue;}
         font-size: 30px;
 
 }
+
 
 
 
