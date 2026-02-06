@@ -16,12 +16,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getDatabase(app);
 
-// Fonction pour ajuster la hauteur
-function adjustHeight(el) {
-    el.style.height = "70vh";           // remet la hauteur minimale
-    el.style.height = el.scrollHeight + "px"; // ajuste à la taille du contenu
-}
-
 const areaWrite = document.getElementById("zone_de_texte")
 const docName = document.getElementById("doc_name")
 
@@ -38,11 +32,9 @@ onAuthStateChanged(auth, (user) => {
           const infoDoc = data.val();
           docName.innerHTML = infoDoc.name
           areaWrite.value = infoDoc.content
-          adjustHeight(textarea);    //ajustement initial de la taille du texte
         });
 
         areaWrite.addEventListener("input", function () {
-          adjustHeight(textarea)    //ajuste la taille à chaque saisie
           update(ref(db, "Documents/" + id_doc), {
             content: areaWrite.value
           })
@@ -59,3 +51,4 @@ onAuthStateChanged(auth, (user) => {
   }
 
 });
+
