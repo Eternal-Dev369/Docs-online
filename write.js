@@ -17,6 +17,7 @@ const auth = getAuth(app)
 const db = getDatabase(app);
 
 const areaWrite = document.getElementById("zone_de_texte")
+const docName = document.getElementById("doc_name")
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -29,6 +30,7 @@ onAuthStateChanged(auth, (user) => {
 
         onValue(ref(db, 'Documents/' + id_doc), (data) => {
           const infoDoc = data.val();
+          docName.innerHTML = infoDoc.name
           areaWrite.value = infoDoc.content
         });
 
@@ -47,4 +49,5 @@ onAuthStateChanged(auth, (user) => {
     // Si l'utilisateur n'est pas connecté
     window.location.href = "./index.html";    // On le redirige vers la page index
   }
+
 });
