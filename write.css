@@ -16,6 +16,7 @@ h1 {
 
 #zone_de_texte {
         margin: 20px;
+        padding: 20px 20px;
         border-radius: 20px;
         width: 80%;
         min-height: 70vh;
@@ -23,6 +24,6 @@ h1 {
         resize: none;
         border: none;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        background-color: white;
+        outline: none;
 }
 
