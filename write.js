@@ -31,12 +31,12 @@ onAuthStateChanged(auth, (user) => {
         onValue(ref(db, 'Documents/' + id_doc), (data) => {
           const infoDoc = data.val();
           docName.innerHTML = infoDoc.name
-          areaWrite.value = infoDoc.content
+          areaWrite.innerHTML = infoDoc.content
         });
 
         areaWrite.addEventListener("input", function () {
           update(ref(db, "Documents/" + id_doc), {
-            content: areaWrite.value
+            content: areaWrite.innerHTML
           })
         })
       } else {
@@ -51,4 +51,5 @@ onAuthStateChanged(auth, (user) => {
   }
 
 });
+
 
