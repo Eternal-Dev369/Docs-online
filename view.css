@@ -50,6 +50,7 @@ body  {
         margin-right: auto;
         margin-top: 17px;
         background-color: #f1f1f1;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
  .document:hover {
         transform: scale(1.05);
@@ -69,9 +70,11 @@ body  {
         height: 75px;
         font-size: 50px;
 }
-#btn_new:hover {
+
+button:hover {
         transform:scale(1.2) ;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 dialog {
@@ -80,6 +83,8 @@ dialog {
         border-radius: 20px;
         background: white; 
         box-shadow: 0 0 20px;
+
+        display: flex;
         flex-direction: column;
         gap: 10px ;
 }
@@ -111,4 +116,5 @@ dialog input {
         cursor: pointer;
         width: 20%
 }
+
 
