@@ -1,12 +1,6 @@
 body  {
         margin: 0; 
         background-color: #FFF;
-        /*
-        background-image:
-                radial-gradient(circle at 20% 20%, rgba(120, 253, 12, 0.4) 0%, transparent 60%), 
-                radial-gradient(circle at 80% 80%, rgba(5, 237, 245, 0.3) 0%, transparent 70%); 
-        */
-        background-blend-mode: overlay; 
         font-family: sans-serif;
 }
 
@@ -83,7 +77,8 @@ dialog {
         border-radius: 20px;
         background: white; 
         box-shadow: 0 0 20px;
-
+}
+dialog[open] {
         display: flex;
         flex-direction: column;
         gap: 10px ;
@@ -116,5 +111,6 @@ dialog input {
         cursor: pointer;
         width: 20%
 }
+
 
 
