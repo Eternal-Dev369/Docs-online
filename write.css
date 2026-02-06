@@ -19,8 +19,12 @@ h1 {
         border-radius: 20px;
         width: 80%;
         min-height: 70vh;
+        height: min-content;
         resize: none;
         border: none;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+#zone_de_texte:focus {
+        outline: none;
+}
