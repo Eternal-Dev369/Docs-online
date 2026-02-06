@@ -88,8 +88,8 @@ dialog input {
 
 .dialog_actions {
         display: flex;
-        justify-content: space-between;
-        gap: 10px;
+        justify-content: center;
+        gap: 15%;
 }
 
 dialog button {        
