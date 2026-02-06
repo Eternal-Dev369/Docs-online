@@ -64,6 +64,10 @@ body  {
         height: 75px;
         font-size: 50px;
 }
+.btn_new:hover {
+        transform:scale(1.2) ;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 
 dialog {
         border: none; 
@@ -86,12 +90,6 @@ dialog input {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.dialog_actions {
-        display: flex;
-        justify-content: center;
-        gap: 15%;
-}
-
 dialog button {        
         border-radius: 10px; 
         color: white; 
@@ -101,16 +99,21 @@ dialog button {
         width: 20%
 }
 
+.dialog_actions {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+}
+
+.dialog_actions button:hover {
+        transform:scale(1.2) ;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 #btn_back {
         background-color: lightgrey;
 }
 
 #btn_create {
         background-color: purple; 
-}
-
-button:hover {
-        transform:scale(1.2) ;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
