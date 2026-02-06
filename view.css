@@ -65,7 +65,7 @@ body  {
         font-size: 50px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn_new:hover {
+#btn_new:hover {
         transform:scale(1.2) ;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -119,4 +119,3 @@ dialog input {
 #btn_create {
         background-color: purple; 
 }
-
