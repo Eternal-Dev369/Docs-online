@@ -92,9 +92,12 @@ dialog input {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#btn_back {
+dialog button {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        
         border-radius: 10px; 
-        background-color: lightgrey; 
         color: white; 
         padding: 10px 20px; 
         border: none; 
@@ -102,15 +105,14 @@ dialog input {
         width: 20%
 }
 
-#btn_create {
-        border-radius: 10px; 
-        background-color: purple; 
-        color: white; 
-        padding: 10px 20px; 
-        border: none; 
-        cursor: pointer;
-        width: 20%
+#btn_back {
+        background-color: lightgrey;
 }
+
+#btn_create {
+        background-color: purple; 
+}
+
 
 
 
