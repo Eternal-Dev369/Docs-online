@@ -30,9 +30,17 @@ onAuthStateChanged(auth, (user) => {
 
         const div = document.getElementById("documents")
         for (let el in documents) {
-          const doc = document.createElement("p"); //Crée un objet html p
-          doc.innerHTML = documents[el];
+          const doc = document.createElement("div"); //Crée un objet html p
           doc.className = "document";
+
+          const img = document.createElement("img")
+          img.src = "./image/miniatureFile.png"
+          img.className = "img_file"
+          doc.appendChild(img)
+
+          const name = document.createElement("p")
+          name.innerHTML = documents[el];
+          doc.appendChild(name)
 
           doc.addEventListener("click", function () { // Quand le document est cliqué
             // On stocke l'uid du document à modifier dans la database

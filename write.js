@@ -52,4 +52,6 @@ onAuthStateChanged(auth, (user) => {
 
 });
 
-
+document.getElementById("btn_back").addEventListener("click", function () {
+  window.location.href = "./view.html"
+})

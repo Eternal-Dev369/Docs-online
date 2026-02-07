@@ -20,10 +20,36 @@ h1 {
         border-radius: 20px;
         width: 80%;
         min-height: 70vh;
-        height: min-content;
         resize: none;
         border: none;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         outline: none;
 }
 
+#btn_back {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+
+        width: 48px;
+        height: 48px;
+
+        border: none;
+        border-radius: 50%;
+
+        font-size: 35px;
+
+        cursor: pointer;
+        background-color: white;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+}
+#btn_back:hover {
+        transform: scale(1.15);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+#btn_back:active {
+        transform: scale(0.95);
+}
