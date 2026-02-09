@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-import { getAuth, onAuthStateChanged,} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js"
+import { getAuth, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js"
 import { getDatabase, ref, get, child, update } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
 
 // Configuration de l'application
@@ -33,14 +33,19 @@ onAuthStateChanged(auth, (user) => {
           const doc = document.createElement("div"); //Crée un objet html p
           doc.className = "document";
 
-          const img = document.createElement("img")
-          img.src = "./image/miniatureFile.png"
-          img.className = "img_file"
-          doc.appendChild(img)
+          const img = document.createElement("img");
+          img.src = "./image/miniatureFile.png";
+          img.className = "img_file";
+          doc.appendChild(img);
 
-          const name = document.createElement("p")
+          const name = document.createElement("p");
           name.innerHTML = documents[el];
-          doc.appendChild(name)
+          doc.appendChild(name);
+
+          const btnMenu = document.createElement("img");
+          btnMenu.src = "./image/btn-menu.png";
+          btnMenu.className = "btn_menu";
+          doc.appendChild(btnMenu);
 
           doc.addEventListener("click", function () { // Quand le document est cliqué
             // On stocke l'uid du document à modifier dans la database
@@ -116,3 +121,15 @@ btnCreate.addEventListener("click", function () {
 document.getElementById("btn_back").addEventListener("click", function () {
     dialogNewDoc.close()
 });
+
+
+//deconexion
+const log_out = document.getElementById("log_out");
+
+log_out.addEventListener("click", function() {
+  signOut(auth).then(() => {
+    window.location.url = index.html
+  }).catch((error) => {
+    console.log("Erreure lors de la deconexion")
+  });
+})

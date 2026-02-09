@@ -16,10 +16,21 @@ body  {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 30px;
 }
 
 #Bandaux h1 {
         margin: 0;
+}
+
+#log_out {
+        border: none;
+        border-radius: 20px;
+        padding: 0px;
+}
+
+#log_out img {
+        width: 50px;
 }
 
 #documents {
@@ -62,6 +73,10 @@ body  {
 
 .document p {
         margin: 0;
+}
+
+.btn_menu {
+        height: 30px;
 }
 
 #btn_new {
