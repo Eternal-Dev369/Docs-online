@@ -17,16 +17,54 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 const dbRef = ref(db);
 
+let selectedDocId = null;
+
+function deleteDoc(docId) {
+  // TODO : si l'user n'est pas le propriétaire du document, il faut juste le retirer de sa liste de documents partagés, sinon il faut supprimer le document et le retirer de la liste de tous les utilisateurs avec qui il est partagé
+  let updates = {};
+  updates["Documents/" + docId] = null;
+  updates["Users/" + auth.currentUser.uid + "/Docs/" + docId] = null;
+  update(dbRef, updates).then( () => {
+    window.location.reload();  // On recharge la page pour mettre à jour la liste des documents
+  });
+}
+
+function renameDoc(docId, newName) {
+  // TODO : modifier aussi le nom du document dans les autres utilisateurs avec qui le document est partagé
+  let updates = {};
+  updates["Documents/" + docId + "/name"] = newName;
+  updates["Users/" + auth.currentUser.uid + "/Docs/" + docId] = newName;
+  update(dbRef, updates).then( () => {
+    window.location.reload();  // On recharge la page pour mettre à jour la liste des documents
+  });
+}
+
+function shareDoc(docId, email) {
+    // TODO : partager le document avec un autre utilisateur grâce à son email : ajouter l'user dans la liste des utilisateurs avec qui le document est partagé dans la database, et ajouter le document dans la liste des documents partagés de l'utilisateur
+}
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // Si l'utilisateur est connecté (grâce au cookies)
     const uid = user.uid;
 
-    get(child(dbRef, `Users/${uid}/Docs`)).then((snapshot) => {
-      if (snapshot.exists()) {
+    Promise.all([
+      get(child(dbRef, `Users/${uid}/Docs`)),
+      get(child(dbRef, `Users/${uid}/DocsShared`))
+    ]).then(([docsSnap, sharedSnap]) => {
+
+      let documents = {};
+
+      if (docsSnap.exists()) {
+        documents = { ...documents, ...docsSnap.val() };
+      }
+
+      if (sharedSnap.exists()) {
+        documents = { ...documents, ...sharedSnap.val() };
+      }
+
+      if (Object.keys(documents).length > 0) {
         console.log("Documents récupérés !");
-        const documents = snapshot.val();
 
         const div = document.getElementById("documents")
         for (let el in documents) {
@@ -47,13 +85,22 @@ onAuthStateChanged(auth, (user) => {
           btnMenu.className = "btn_menu";
           doc.appendChild(btnMenu);
 
-          doc.addEventListener("click", function () { // Quand le document est cliqué
-            // On stocke l'uid du document à modifier dans la database
-            let updates = {};
-            updates["Users/" + uid + "/liveDoc"] = el;   
-            update(dbRef, updates).then(() => {
-              window.location.href = "./write.html";  // On le redirige vers la page write
-            });
+          doc.addEventListener("click", function (e) { // Quand le document est cliqué
+            if (e.target.closest(".btn_menu")) { // Si c'est le bouton menu qui est cliqué
+              // Afficher le menu de gestion du document (ex: renommer, supprimer, partager, etc.)
+              const menu = document.getElementById("document_menu");
+              menu.style.display = "flex";
+              menu.style.left = e.clientX + "px";
+              menu.style.top = e.clientY + "px";
+              selectedDocId = el; // Stocke l'uid du document sélectionné pour le menu
+            } else { // Sinon, c'est que le document lui même est cliqué
+              // On stocke l'uid du document à modifier dans la database
+              let updates = {};
+              updates["Users/" + uid + "/liveDoc"] = el;   
+              update(dbRef, updates).then(() => {
+                window.location.href = "./write.html";  // On le redirige vers la page write
+              });
+            }
           });
 
           div.appendChild(doc);  // Ajoute l'objet au document
@@ -133,3 +180,32 @@ log_out.addEventListener("click", function() {
     console.log("Erreure lors de la deconexion")
   });
 })
+
+// Fermer le menu de gestion du document si on clique en dehors
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("document_menu");
+  // Si le menu est visible
+  if (menu.style.display === "flex") {
+
+    // Si on clique ni sur le menu ni sur un bouton menu
+    if (!e.target.closest("#document_menu") && !e.target.closest(".btn_menu")) {
+      menu.style.display = "none";
+    }
+  }
+});
+
+// Gérer les actions du menu de gestion du document
+document.getElementById("btn_rename").addEventListener("click", function () {
+  const newName = prompt("Entrez le nouveau nom du document :");
+  if (newName) {
+    renameDoc(selectedDocId, newName);
+  } else {
+    alert("Le nom ne peut pas être vide !");
+  }
+});
+
+document.getElementById("btn_delete").addEventListener("click", function () {
+  if (confirm("Êtes-vous sûr de vouloir supprimer ce document ?")) {
+    deleteDoc(selectedDocId);
+  }
+});

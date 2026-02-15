@@ -27,8 +27,10 @@ onAuthStateChanged(auth, (user) => {
     get(child(ref(db), `Users/${uid}/liveDoc`)).then((snapshot) => {
       if (snapshot.exists()) {
         const id_doc = snapshot.val()
+        console.log("id récupéré : id_doc = " + id_doc)
 
         onValue(ref(db, 'Documents/' + id_doc), (data) => {
+          console.log("Données du document récupérées !")
           const infoDoc = data.val();
           docName.innerHTML = infoDoc.name
           areaWrite.value = infoDoc.content
