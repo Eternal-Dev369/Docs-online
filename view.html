@@ -12,7 +12,9 @@
             <button id="log_out"><img src="image/log_out.png" alt="deconexion"></button>
         </div>
 
-        <div id="documents"></div>
+        <div id="own_documents">Aucun document trouvé</div>
+
+        <div id="shared_documents">Aucun document trouvé</div>
 
         <button id="btn_new">+</button>
 
@@ -30,6 +32,12 @@
             <button id="btn_delete" type="button">Supprimer</button>
             <button id="btn_share" type="button">Partager</button>
         </div>
+
+        <dialog id="dialog_email_user_shared">
+            <h1>Entrer l'adresse email de l'utilisateur</h1>
+            <input id="input_email_user_shared" placeholder="email de l'utilisateur">
+            <button id="btn_email_user_shared" type="button">Partager</button>
+        </dialog>
 
         <script type="module" src="view.js"></script>
     </body>

@@ -33,7 +33,7 @@ body  {
         width: 50px;
 }
 
-#documents {
+#own_documents, #shared_documents {
         border-radius: 20px;
         width: 80%;
         margin-left: auto;

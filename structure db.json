@@ -1,0 +1,26 @@
+{
+  "Documents": {
+    "id doc": {
+      "content": "",
+      "name": "name doc",
+      "userId": " id owner",
+      "usersShared": {
+        "id user": true
+      }
+    }
+  },
+  "Users": {
+    "id user": {
+      "Docs": {
+        "id doc": "name doc"
+      },
+      "liveDoc": "id doc",
+      "DocsShared": {
+        "id doc": "name doc"
+      }
+    }
+  },
+  "Emails": {
+    "email": "id user"
+  }
+}

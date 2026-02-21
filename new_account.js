@@ -16,17 +16,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app)
 
-/*
-// Vérifie si l'utilisateur est connecté grace au cookies
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // Si l'utilisateur est connecté (grâce au cookies)
-    console.log("Utilisateur déjà connecté !")
-    window.location.href = "./view.html";   // On le redirige vers la page view
-  };
-});
-*/
-
 const btn_create_account = document.getElementById("btn_create_account"); // prend le bouton create account
 btn_create_account.addEventListener("click", function () {  // Quand le bouton est cliqué alors faire...
   const email = document.getElementById("input_email").value;  // recupere les données entrées
@@ -36,14 +25,17 @@ btn_create_account.addEventListener("click", function () {  // Quand le bouton e
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Compte créé, utilisateur connecté
-      console.log("Utilisateur créer avec succès !")
-      set(ref(db, 'Users/' + userCredential.user.uid), {
-        liveDoc: "menu",
-      }).then(() => {
-        window.location.href = "./view.html";   // On le redirige vers la page view
-      })
-    })
-    .catch((error) => {
+      console.log("Utilisateur créer avec succès !");
+
+      const safeEmail = email.replace(/\./g, "_");
+      set(ref(db, "Emails/" + safeEmail), userCredential.user.uid).then(() => {
+
+        set(ref(db, "Users/" + userCredential.user.uid + "/liveDoc"), "menu").then(() => {
+          window.location.href = "./view.html";   // On le redirige vers la page view
+        })
+
+      });
+    }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage)
